@@ -13,17 +13,17 @@ int main(){
 	getline(cin, userStr);
 	istringstream iss(userStr);
 	iss >> comando;
-	iss >> com2;
 	for (int i = 0; i < userStr.length(); i++) {
 		cEsp++;
 	}
 
 
-/*	if (comando == "carregP") {
-//
-//	}
-	else*/ if (comando == "carregaC") {
-		cout << "tou aqui ......";
+	if (comando == "carregP") {
+		iss >> com2;
+		a.CarregaP(com2);
+	}
+	else if (comando == "carregaC") {
+		iss >> com2;
 		a.CarregaC(com2);
 	}
 //	else if (comando == "carregaA") {

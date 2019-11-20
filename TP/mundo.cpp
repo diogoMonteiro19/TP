@@ -5,7 +5,6 @@ mundo::mundo()
 
 void mundo::CarregaC(string nf)
 {
-	cout << "cheguei ao carrega";
 	ifstream ficheiro(nf);
 	if (ficheiro) {
 		string linha;
