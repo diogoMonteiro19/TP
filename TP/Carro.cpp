@@ -1,17 +1,19 @@
 #include"Carro.h"
+#include"lib.h"
 
-
+int Carro::nid = 0;
 Carro::Carro(string ma, string mo,int cm,int ci)
 {
 	string i[27]{ "a","b","c","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
 	marca = ma;
 	modelo = mo;
-	if (count > 27)
+	if (nid> 27)
 		id = "?";
 	else
-		id = i[++count];
+		id = i[nid];
 	capmax = cm;
 	capini = ci;
+	nid++;
 
 }
 
@@ -20,11 +22,10 @@ Carro::Carro(string ma)
 	string i[27]{ "a","b","c","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z" };
 	marca = ma;
 	modelo = "modelo base";
-	count = count + 1;
-	if (count > 27)
+	if (nid > 27)
 		id = "?";
 	else
-		id = i[count];
+		id = i[nid];
 }
 
 string Carro::getAsString()
@@ -33,5 +34,6 @@ string Carro::getAsString()
 	buffero << capini << "||" << capmax << "||" << marca << "||" << modelo<<"||"<<id << endl;
 	return buffero.str();
 }
+
 
 

@@ -3,7 +3,11 @@
 
 class Piloto
 {
-	Piloto();
+	string tipo;
+	string nome;
+public:
+	Piloto(string t,string n);
+	string getAsString();
 	~Piloto();
 };
 

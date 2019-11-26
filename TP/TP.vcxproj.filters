@@ -24,6 +24,18 @@
     <ClCompile Include="mundo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Piloto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Autodromo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Garagem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pista.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Carro.h">
@@ -33,6 +45,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mundo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Piloto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Autodromo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Garagem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pista.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

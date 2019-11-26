@@ -1,4 +1,5 @@
 #include"lib.h"
+#include"mundo.h"
 //
 //ostream& operator <<(ostream& o, const mundo& k) {
 //	o << k.getAsString();
@@ -13,9 +14,7 @@ int main(){
 	getline(cin, userStr);
 	istringstream iss(userStr);
 	iss >> comando;
-	for (int i = 0; i < userStr.length(); i++) {
-		cEsp++;
-	}
+
 
 
 	if (comando == "carregP") {
