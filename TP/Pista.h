@@ -3,12 +3,12 @@
 
 class Pista
 {
-	string nome;
 	int comprimento;
 	//vector<Carro*> nc;
 
 public:
-	Pista(string n, int comp);
+	Pista();
+	void setComprimento(int com);
 	string getAsString()const;
 	~Pista();
 };

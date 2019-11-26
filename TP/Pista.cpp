@@ -1,16 +1,19 @@
 #include "Pista.h"
 
 
-Pista::Pista(string n, int comp)
+Pista::Pista()
 {
-	nome = n;
-	comprimento = comp;
+}
+
+void Pista::setComprimento(int com)
+{
+	comprimento = com;
 }
 
 string Pista::getAsString() const
 {
 	ostringstream buffero;
-	buffero << "Nome: " << nome << "Tamanho: " << comprimento << endl;
+	buffero << "Tamanho: " << comprimento << endl;
 
 	return buffero.str();
 }

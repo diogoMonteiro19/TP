@@ -1,18 +1,19 @@
 #pragma once
-
+#include"lib.h"
 class Pista;
 class Garagem;
 
 class Autodromo
 {
 
-	//string nome;
+	string nome;
+	int N;
+	Pista* p;
 	//vector<Carro*> c;
 	//vector<Piloto*> p;
 
 public:
-	Autodromo();
-
+	Autodromo(int num,int com,string& n);
 	~Autodromo();
 };
 

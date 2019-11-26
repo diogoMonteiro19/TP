@@ -11,7 +11,7 @@ Carro::Carro(string ma, string mo,int cm,int ci)
 		id = "?";
 	else
 		id = i[nid];
-	capmax = cm;
+	capmax = cm;	
 	capini = ci;
 	nid++;
 
