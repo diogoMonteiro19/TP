@@ -35,5 +35,10 @@ string Carro::getAsString()
 	return buffero.str();
 }
 
+string Carro::getNome()
+{
+	return id;
+}
+
 
 

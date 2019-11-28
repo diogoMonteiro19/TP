@@ -13,5 +13,6 @@ public:
 	Carro(string ma,string mo,int cm,int ci);
 	Carro(string ma);
 	string getAsString();
+	string getNome();
 };
 

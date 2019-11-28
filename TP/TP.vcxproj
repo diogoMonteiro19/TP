@@ -124,19 +124,25 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Autodromo.cpp" />
+    <ClCompile Include="campeonato.cpp" />
     <ClCompile Include="Carro.cpp" />
+    <ClCompile Include="Consola.cpp" />
     <ClCompile Include="Garagem.cpp" />
     <ClCompile Include="mundo.cpp" />
+    <ClCompile Include="Pares.cpp" />
     <ClCompile Include="Piloto.cpp" />
     <ClCompile Include="Pista.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Autodromo.h" />
+    <ClInclude Include="campeonato.h" />
     <ClInclude Include="Carro.h" />
+    <ClInclude Include="Consola.h" />
     <ClInclude Include="Garagem.h" />
     <ClInclude Include="lib.h" />
     <ClInclude Include="mundo.h" />
+    <ClInclude Include="Pares.h" />
     <ClInclude Include="Piloto.h" />
     <ClInclude Include="Pista.h" />
   </ItemGroup>

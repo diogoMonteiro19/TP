@@ -3,6 +3,7 @@
 #include"Piloto.h"
 #include"Carro.h"
 #include"Autodromo.h"
+#include"campeonato.h"
 //
 //ostream& operator <<(ostream& o, const mundo& k) {
 //	o << k.getAsString();
@@ -37,8 +38,7 @@ int main(){
 		if (com2 == "p") {
 			iss >> com3;
 			iss >> com4;
-			Piloto* novo = new Piloto(com3, com4);
-			a.addPiloto(novo);
+			a.addPiloto(com3,com4);
 		}
 		else if (com2 == "c") {
 			iss >>aux1;
@@ -49,8 +49,7 @@ int main(){
 			z >> capm;
 			iss >> com3;
 			iss >> com4;
-			Carro* novo = new Carro(com3, com4,capm,capi);
-			a.addCarro(novo);
+			a.addCarro(com3,com4,capm,capi);
 		}
 		else if (com2 == "a") {
 			iss >> aux1;
@@ -60,8 +59,7 @@ int main(){
 			stringstream g(aux2);
 			g >> comp;
 			iss >> com3;
-			Autodromo* novo = new Autodromo(ncarros, comp, com3);
-			a.addAutodromo(novo);
+			a.addAutodromo(ncarros,comp,com3);
 		}
 	}
 //	else if (comando == "apaga") {
@@ -69,9 +67,11 @@ int main(){
 //	}
 //	else if (comando == "entranocarro") {
 //
-//	}else if(com)
-//
-//
+	else if (comando == "campeonato") {
+		a.criaCamp(iss);
+	}
+
+
 
 return 0;
 }

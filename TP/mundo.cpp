@@ -2,7 +2,10 @@
 #include"Carro.h"
 #include"Piloto.h"
 #include"Autodromo.h"
+#include"campeonato.h"
 #include"lib.h"
+
+int mundo::conta = 1;
 
 mundo::mundo()
 {
@@ -49,6 +52,18 @@ void mundo::CarregaP(string nf)
 
 }
 
+bool mundo::verificaP(string& np)
+{
+	for (auto ptr = lp.begin(); ptr != lp.end();) {
+		if ((*ptr)->getN == np) {
+			return true;
+		}
+		else
+			ptr++;
+	}
+	return false;
+}
+
 void mundo::CarregaA(string nf)
 {
 	ifstream ficheiro(nf);
@@ -69,17 +84,37 @@ void mundo::CarregaA(string nf)
 	}
 }
 
-void mundo::addPiloto(Piloto* p)
+void mundo::addPiloto(string& t,string& n)
 {
-	lp.push_back(p);
+	if (!verificaP(n)) {
+		Piloto* novo = new Piloto(t, n);
+		lp.push_back(novo);
+	}
+	else {
+		string auxn;
+		ostringstream o;
+		o << n << conta;
+		auxn = o.str();
+		conta++;
+		Piloto* novo = new Piloto(auxn, n);
+		lp.push_back(novo);
+	}
 }
 
-void mundo::addCarro(Carro* c)
+void mundo::addCarro(string& ma, string& mo, int cm, int ci)
 {
-	lc.push_back(c);
+	Carro* novo = new Carro(ma, mo, cm, ci);
+	lc.push_back(novo);
 }
 
-void mundo::addAutodromo(Autodromo* a)
+void mundo::addAutodromo(int nc, int com, string& na)
 {
-	la.push_back(a);
+	Autodromo* novo = new Autodromo(nc, com, na);
+	la.push_back(novo);
 }
+
+void mundo::criaCamp(istringstream& dados)
+{
+	novo = new campeonato(dados,lp,lc);
+}
+
