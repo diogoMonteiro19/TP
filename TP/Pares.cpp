@@ -1,6 +1,6 @@
 #include "Pares.h"
 
-Pares::Pares(string& npil, string& nc)
+Pares::Pares(string npil, string nc)
 {
 	npiloto = npil;
 	ncarro = nc;

@@ -14,7 +14,7 @@ class Autodromo
 
 public:
 	Autodromo(int num,int com,string& n);
-	void getNome();
+	string getNome();
 	~Autodromo();
 };
 

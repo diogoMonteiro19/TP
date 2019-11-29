@@ -126,7 +126,6 @@
     <ClCompile Include="Autodromo.cpp" />
     <ClCompile Include="campeonato.cpp" />
     <ClCompile Include="Carro.cpp" />
-    <ClCompile Include="Consola.cpp" />
     <ClCompile Include="Garagem.cpp" />
     <ClCompile Include="mundo.cpp" />
     <ClCompile Include="Pares.cpp" />

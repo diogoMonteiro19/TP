@@ -62,11 +62,32 @@ int main(){
 			a.addAutodromo(ncarros,comp,com3);
 		}
 	}
-//	else if (comando == "apaga") {
-//
-//	}
-//	else if (comando == "entranocarro") {
-//
+	else if (comando == "apaga") {
+		iss >> com2;
+		if (com2 == "p") {
+			iss >> com3;
+			a.removePiloto(com3);
+		}
+		else if (com2 == "c") {   //com3 vai ser o ID do carro
+			iss >> com3;
+			a.removeCarro(com3);
+		}
+		else if (com2 == "a") {
+			iss >> com3;
+			a.removeAutodromo(com3);
+		}
+	}
+
+	else if (comando == "entranocarro") {
+		iss >> com2;
+		iss >> com3;
+		cout << a.entraNoCarro(com2,com3);
+	}
+	else if (comando == "saidocarro") {
+		iss >> com2;
+		a.saiDoCarro(com2);
+	}
+
 	else if (comando == "campeonato") {
 		a.criaCamp(iss);
 	}

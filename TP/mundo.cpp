@@ -9,6 +9,7 @@ int mundo::conta = 1;
 
 mundo::mundo()
 {
+	novo = nullptr;
 }
 
 void mundo::CarregaC(string nf)
@@ -52,10 +53,10 @@ void mundo::CarregaP(string nf)
 
 }
 
-bool mundo::verificaP(string& np)
+bool mundo::verificaP(string np)
 {
 	for (auto ptr = lp.begin(); ptr != lp.end();) {
-		if ((*ptr)->getN == np) {
+		if ((*ptr)->getN() == np) {
 			return true;
 		}
 		else
@@ -116,5 +117,91 @@ void mundo::addAutodromo(int nc, int com, string& na)
 void mundo::criaCamp(istringstream& dados)
 {
 	novo = new campeonato(dados,lp,lc);
+}
+
+void mundo::removePiloto(string n)
+{
+	for (auto ptr = lp.begin(); ptr != lp.end();) {
+		if ((*ptr)->getN() == n) {
+			delete* ptr;
+			ptr = lp.erase(ptr);
+		}
+		else ptr++;
+	}
+}
+
+void mundo::removeCarro(string id)
+{
+	for (auto ptr = lc.begin(); ptr != lc.end();) {
+		if ((*ptr)->getNome() == id) {
+			delete* ptr;
+			ptr = lc.erase(ptr);
+		}
+		else ptr++;
+	}
+}
+
+void mundo::removeAutodromo(string n)
+{
+	for (auto ptr = la.begin(); ptr != la.end();) {
+		if ((*ptr)->getNome() == n) {
+			delete* ptr;
+			ptr = la.erase(ptr);
+		}
+		else ptr++;
+	}
+}
+
+string mundo::entraNoCarro(string np, string id)
+{
+	string aux;
+	ostringstream buffero;
+	for (auto ptr = lp.begin(); ptr != lp.end();) {
+		if ((*ptr)->getN() == np) {
+			if ((*ptr)->getDentro()) {
+				aux = "O piloto esta dentro do carro";
+				return aux;
+			}
+			else {
+				for (auto ptr2 = lc.begin(); ptr2 != lc.end();) {
+					if((*ptr2)->getNome() == id){
+						if ((*ptr2)->getOcupado()) {
+							aux = "O carro esta ocupado";
+							return aux;
+						}
+						else
+						{
+							(*ptr)->TDentro();
+							(*ptr2)->TOcupado();
+							(*ptr2)->setJunta(*ptr);
+							buffero << "O Piloto entrou no carro com id: " << (*ptr2)->getNome();
+						}
+					}
+					ptr2++;
+				}
+			}
+		}
+		ptr++;
+	}
+	return buffero.str();
+}
+
+void mundo::saiDoCarro(string id)
+{
+	for (auto ptr = lc.begin(); ptr != lc.end();) {
+		if ((*ptr)->getNome() == id) {
+			(*ptr)->FOcupado();
+			for (auto ptr2 = lp.begin(); ptr2 != lp.end();) {
+				if ((*ptr2)->getN() == (*ptr)->getNP()) {
+					(*ptr2)->FDentro();
+				}
+				else
+					ptr2++;
+			}
+			(*ptr)->RemovePil();
+		}
+		else
+			ptr++;
+	}
 }
 

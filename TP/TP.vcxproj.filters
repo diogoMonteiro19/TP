@@ -39,9 +39,6 @@
     <ClCompile Include="campeonato.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Consola.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Pares.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

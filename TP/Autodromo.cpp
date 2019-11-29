@@ -10,6 +10,11 @@ Autodromo::Autodromo(int num,int com,string& n)
 	p->setComprimento(com);
 }
 
+string Autodromo::getNome()
+{
+	return nome;
+}
+
 
 Autodromo::~Autodromo()
 {

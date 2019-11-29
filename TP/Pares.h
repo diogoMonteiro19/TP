@@ -8,7 +8,7 @@ class Pares
 	int pos;
 	//int nvoltas;
 public:
-	Pares(string& npil, string& nc);
+	Pares(string npil, string nc);
 	string getPiloto();
 	string getCarro();
 };

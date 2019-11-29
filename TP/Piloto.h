@@ -10,6 +10,9 @@ public:
 	Piloto(string t,string n);
 	string getAsString();
 	string getN();
+	bool getDentro();
+	void TDentro();
+	void FDentro();
 	~Piloto();
 };
 

@@ -20,6 +20,21 @@ string Piloto::getN()
 	return nome;
 }
 
+bool Piloto::getDentro()
+{
+	return dentro;
+}
+
+void Piloto::TDentro()
+{
+	dentro = true;
+}
+
+void Piloto::FDentro()
+{
+	dentro = false;
+}
+
 Piloto::~Piloto()
 {
 }
