@@ -11,5 +11,6 @@ public:
 	Pares(string npil, string nc);
 	string getPiloto();
 	string getCarro();
+	int getPos();
 };
 

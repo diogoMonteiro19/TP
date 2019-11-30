@@ -8,8 +8,10 @@ class Piloto;
 class campeonato
 {
 	vector<string> va;
-	vector<Pares> vp;
+	vector<Pares*> vp;
+	int autodromoatual;
 public:
 	campeonato(istringstream& la,vector<Piloto*> pil,vector<Carro*> car);
+	string retornaAuto();
 };
 

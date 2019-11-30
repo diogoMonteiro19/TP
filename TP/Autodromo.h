@@ -8,13 +8,15 @@ class Autodromo
 
 	string nome;
 	int N;
-	Pista* p;
+	int cp;
 	//vector<Carro*> c;
 	//vector<Piloto*> p;
 
 public:
 	Autodromo(int num,int com,string& n);
 	string getNome();
+	int retComp();
+	string getASstring();
 	~Autodromo();
 };
 

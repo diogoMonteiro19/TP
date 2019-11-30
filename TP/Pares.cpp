@@ -16,3 +16,8 @@ string Pares::getCarro()
 {
 	return ncarro;
 }
+
+int Pares::getPos()
+{
+	return pos;
+}

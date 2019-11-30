@@ -3,9 +3,12 @@
 #include"Pares.h"
 #include"Piloto.h"
 #include"Carro.h"
+#include"Consola.h"
+#include<ctime>
 
 campeonato::campeonato(istringstream& la, vector<Piloto*> pil, vector<Carro*> car)
 {
+	srand(time(NULL));
 	bool valido = false;
 	bool existe=false;
 	if (pil.size() >= car.size()) {
@@ -16,13 +19,13 @@ campeonato::campeonato(istringstream& la, vector<Piloto*> pil, vector<Carro*> ca
 				int npil = rand() % pil.size();
 				//verificar se o piloto ja tem par
 				for (int i2 = 0; i2 < vp.size(); i2++) {
-					if (pil[npil]->getN() == vp[i2].getPiloto()) {// existe
+					if (pil[npil]->getN() == vp[i2]->getPiloto()) {// existe
 						existe = true;
 						break;
 					}
 				}
 				if (!existe) {
-					Pares novo(pil[npil]->getN(), car[i]->getNome());
+					Pares* novo=new Pares(pil[npil]->getN(), car[i]->getNome());
 					vp.push_back(novo);
 					valido = true;
 				}
@@ -38,13 +41,13 @@ campeonato::campeonato(istringstream& la, vector<Piloto*> pil, vector<Carro*> ca
 					int ncar = rand() % car.size();
 					//verificar se o carro ja tem par
 					for (int i2 = 0; i2 < vp.size(); i2++) {
-						if (car[ncar]->getNome() == vp[i2].getCarro()) {// existe
+						if (car[ncar]->getNome() == vp[i2]->getCarro()) {// existe
 							existe = true;
 							break;
 						}
 					}
 					if (!existe) {
-						Pares novo(car[ncar]->getNome(), pil[i]->getN());
+						Pares* novo= new Pares(car[ncar]->getNome(), pil[i]->getN());
 						vp.push_back(novo);
 						valido = true;
 					}
@@ -57,6 +60,16 @@ campeonato::campeonato(istringstream& la, vector<Piloto*> pil, vector<Carro*> ca
 		la >> temp;
 		va.push_back(temp);
 	}
+	autodromoatual = 0;
 }
+
+string campeonato::retornaAuto()
+{
+	return va[autodromoatual];
+}
+
+
+
+
 
 

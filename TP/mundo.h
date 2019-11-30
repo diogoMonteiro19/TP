@@ -28,5 +28,7 @@ public:
 	void removeAutodromo(string n);
 	string entraNoCarro(string np, string id);
 	void saiDoCarro(string id);
+	void imprime();
+	int	compPistaAtual();
 };
 

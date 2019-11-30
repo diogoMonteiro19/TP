@@ -3,6 +3,7 @@
 #include"Piloto.h"
 #include"Autodromo.h"
 #include"campeonato.h"
+#include"Consola.h"
 #include"lib.h"
 
 int mundo::conta = 1;
@@ -80,8 +81,8 @@ void mundo::CarregaA(string nf)
 			}
 		}
 	}
-	for (int i = 0; i < lp.size(); i++) {
-		cout << lp[i]->getAsString();
+	for (int i = 0; i < la.size(); i++) {
+		cout << la[i]->getASstring();
 	}
 }
 
@@ -199,6 +200,50 @@ void mundo::saiDoCarro(string id)
 					ptr2++;
 			}
 			(*ptr)->RemovePil();
+		}
+		else
+			ptr++;
+	}
+}
+void mundo::imprime()
+{
+	int compPista,compTraco;
+
+	Consola::clrscr();
+	Consola::setScreenSize(64, 40);
+	compPista = compPistaAtual();
+	compTraco = compPista / 60;
+	Consola::gotoxy(1,0);
+	cout << "|";
+	Consola::gotoxy(62, 0);
+	cout << "|";
+	Consola::gotoxy(1, 1);
+	for (int i = 0; i < 62; i++) {
+		Consola::gotoxy(i + 1, 1);
+		if (i == 0 || i == 61) {
+			cout << "|";
+		}
+		else
+			cout << "-";
+	}
+	Consola::gotoxy(1, 2);
+	cout << "|";
+	Consola::gotoxy(62, 2);
+	cout << "|";
+	Consola::gotoxy(1, 3);
+	cout << compPista<<"||"<< compTraco;
+	Consola::gotoxy(1, 4);
+	for (int i = 0; i < lc.size(); i++){
+		Consola::gotoxy(1, i + 4);
+		cout << lc[i]->getNome();
+	}
+}
+
+int mundo::compPistaAtual()
+{
+	for (auto ptr = la.begin(); ptr != la.end();) {
+		if ((*ptr)->getNome() == novo->retornaAuto()) {
+			return (*ptr)->retComp();
 		}
 		else
 			ptr++;

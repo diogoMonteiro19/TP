@@ -126,6 +126,7 @@
     <ClCompile Include="Autodromo.cpp" />
     <ClCompile Include="campeonato.cpp" />
     <ClCompile Include="Carro.cpp" />
+    <ClCompile Include="Consola.cpp" />
     <ClCompile Include="Garagem.cpp" />
     <ClCompile Include="mundo.cpp" />
     <ClCompile Include="Pares.cpp" />
@@ -144,9 +145,6 @@
     <ClInclude Include="Pares.h" />
     <ClInclude Include="Piloto.h" />
     <ClInclude Include="Pista.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="TP.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
