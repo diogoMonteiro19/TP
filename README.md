@@ -1,3 +1,6 @@
 # TP
-Trabalho Ptratico POO 2019
+Trabalho Pratico POO 2019
+
 Projeto desenvolvido em c++
+
+Simulador de aeroporto
